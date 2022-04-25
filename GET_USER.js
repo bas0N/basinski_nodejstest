@@ -22,7 +22,9 @@ exports.handler = async (event, context) => {
 
     //error handling
     if (!data.Items[0]) {
-      return { statusCode: 404 };
+      return {statusCode:200,
+        object:data.Items[0]
+        }
     }
     return data.Items[0];
   } catch (error) {
