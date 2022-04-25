@@ -23,8 +23,8 @@ exports.handler = async (event) => {
   //adding element to dynamodb
   try {
     await dynamo.put(params).promise();
-    return { body: "Successfully created item!", id: id };
+    return {statusCode:201, body: "Successfully created item!", id: id };
   } catch (err) {
-    return { error: err };
+    return { statusCode:400, error: err };
   }
 };
